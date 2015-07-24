@@ -1,0 +1,27 @@
+p{
+	text-align: center;
+}
+.img-responsive{
+	margin: 0 auto;
+}
+body{
+	background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Walnut_chocolate_chip_cookies,_May_2009.jpg/1280px-Walnut_chocolate_chip_cookies,_May_2009.jpg");
+}
+
+.cookie_title{
+	font-family: Consolas, monaco, monospace;
+  font-style: normal;
+  font-variant: normal;
+  color: white;
+
+}
+
+
+
+.screen1{
+	background-color: rgba(52,66,90,0.5)!important;
+	z-index: 2;
+}
+.container{
+	background-color: transparent !important;
+}
