@@ -9,6 +9,9 @@
 	<link rel="stylesheet" href="css/cookie.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<!-- start Mixpanel --><script type="text/javascript">(function(f,b){if(!b.__SV){var a,e,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+		for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=f.createElement("script");a.type="text/javascript";a.async=!0;a.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";e=f.getElementsByTagName("script")[0];e.parentNode.insertBefore(a,e)}})(document,window.mixpanel||[]);
+			mixpanel.init("YOUR TOKEN");</script><!-- end Mixpanel -->
 </head>
 	<body>
 		<div class="screen1" class="container-fluid">
@@ -21,7 +24,7 @@
 				    <div>
 				      <ul class="nav navbar-nav">
 				        <li class="active"><a href="#">Home</a></li>
-				        <li><a href="#">Prices</a></li>
+				        <li><a href="#prices">Prices</a></li>
 				        <li><a href="#">About us</a></li>      
 				      </ul>
 				    </div>
@@ -67,7 +70,7 @@
 				</div>
 				<div class="container">
 					<div class="row" class="prices">
-					  <div class="col-md-4">
+					  <div class="col-md-2">
 					    <div class="thumbnail">
 					      <img src="http://www.lifeclass-treviso.net/it/files/default/global/community_icons/cookie.png" width="50" height="50" alt="...">
 					      <div class="caption">
@@ -77,11 +80,11 @@
 					       		 	<p>8 Cookies</p>
 					       		 	<p>$8.0</p>
 					       		 </center>
-					        <p><a href="#" class="btn btn-primary" role="button">Buy</a>
+					        <!--<p><a href="#" class="btn btn-primary" role="button">Buy</a>-->
 					      </div>
 					    </div>
 					  </div>
-					   <div class="col-md-4">
+					   <div class="col-md-2">
 					    <div class="thumbnail">
 					      <img src="http://www.iconattitude.com/icons/open_icon_library/apps/png/256/preferences-web-browser-cookies-3.png" width="50" height="50" alt="...">
 					      <div class="caption">
@@ -91,11 +94,11 @@
 					       			<p>32 Cookies</p>
 					       			<p>$16.0</p>
 					       		</center>
-					        <p><a href="#" class="btn btn-primary" role="button">Buy</a>
+					        <!--<p><a href="#" class="btn btn-primary" role="button">Buy</a>-->
 					      </div>
 					    </div>
 					  </div>
-					   <div class="col-md-4">
+					   <div class="col-md-2">
 					    <div class="thumbnail">
 					      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Emojione_1F36A.svg/2000px-Emojione_1F36A.svg.png" width="50" height="50" alt="...">
 					      <div class="caption">
@@ -105,15 +108,73 @@
 					       			<p>384 Cookies</p>
 					       			<p>$32,99</p>
 					       		</center>
-					        <p><a href="#" class="btn btn-primary" role="button">Buy</a>
+					        <!--<p><a href="#" class="btn btn-primary" role="button">Buy</a>-->
 					      </div>
 					    </div>
+					  </div>
+					  <div class="col-md-3">
+					    <div class="container" class="formc">
+						   <form role="form">
+						    <div class="form-group">
+						      <label class="correo" for="email">Email:</label>
+						      <input type="email" class="form-control" id="email" placeholder="Enter email">
+						    </div>
+						     <div class="form-group">
+						      <label class="datos" >Full Name:</label>
+						      <input type="text" class="form-control" id="full_name" placeholder="Full Name">
+						    </div>
+						    <div class="form-group">
+						      <label class="direccion" >Address:</label>
+						      <input type="text" class="form-control" id="dir" placeholder="Address">
+						    </div>
+						   
+						  </form>
+						</div>
+					  </div>
+					    <div class="col-md-3">
+							<div class="container">
+					   		 <br>
+					   		 <p>Select your suscription</p>
+					   		 <select class="btn btn-default" class="selectpicker">
+    							<option id="suscripcion" value="32.99">Annual</option>
+							    <option id="suscripcion" value="16">Monthly</option>
+							    <option id ="suscripcion" value="8">Weekly</option>
+							  </select>
+							 <div class="checkbox" >
+						      <label><input type="checkbox"> Send a copy of this bill</label>
+						    </div>
+
+						    <button type="submit" class="btn btn-default"  onclick="sendMixpanel()">Buy</button>
+						    
+						    </div>
+						    
+
+
 					  </div>
 					</div>				
 				</div>
 			</div>
 		</div>
-		
+		 <script>
+  var sendMixpanel = function() {
+    var email = document.getElementById("email").value;
+    mixpanel.track("nuevo email", {
+      email: email,
+      timestamp: Date.now()
+    });
+    console.log(email);
+    total();
+  };
+  
+  var total =  function (){
+  	var choice= document.getElementById("suscripcion").value;
+  	choice = parseInt(choice);
+  	console.log(choice);
+  	alert(choice + (choice*0.16));
+	}
+  
+  </script>
 		
 	</body>
+
 </html>
