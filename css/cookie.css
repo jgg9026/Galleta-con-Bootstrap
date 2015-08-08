@@ -1,11 +1,6 @@
-p{
-	text-align: center;
-}
+
 .img-responsive{
 	margin: 0 auto;
-}
-body{
-	background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Walnut_chocolate_chip_cookies,_May_2009.jpg/1280px-Walnut_chocolate_chip_cookies,_May_2009.jpg");
 }
 
 .cookie_title{
@@ -16,11 +11,16 @@ body{
 
 }
 
-
-
+.cookie_title{
+	font-size: 6vw;
+}
 .screen1{
 	background-color: rgba(52,66,90,0.5)!important;
 	z-index: 2;
+	max-width: 1200px;
+	background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Walnut_chocolate_chip_cookies,_May_2009.jpg/1280px-Walnut_chocolate_chip_cookies,_May_2009.jpg");
+	margin: auto;
+	font-family: Consolas, monaco, monospace !important;
 }
 .container{
 	background-color: transparent !important;
@@ -37,13 +37,11 @@ body{
 	left: 2%;
 }
 
-.form-group
-{
-	max-width: 20%;
-	left: 2%;
+
 .formc{
 	left: 2%;
-}
+	max-width: 500px;
+
 }
 .thumbnail
 {
@@ -53,7 +51,7 @@ body{
 {
 	background-color: rgba(255,255,255,0.6);
 }
-.correo, .datos, .direccion, .checkbox
+.correo, .datos, .direccion, .checkbox, .temp1
 {
 	color: white!important;
 }
